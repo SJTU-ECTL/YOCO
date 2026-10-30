@@ -1,6 +1,6 @@
 # YOCO: Inference-Only Technology Mapping
 
-This repository performs YOCO technology mapping for **combinational binary AIGER (`.aig`) inputs** using the provided RootPhaseDETR checkpoint and the included YOCO-modified ABC. Other input formats and sequential AIGs are not supported.
+This repository performs YOCO technology mapping for **combinational binary AIGER (`.aig`) inputs** using the YOCO model and the included YOCO-modified ABC. Other input formats and sequential AIGs are not supported.
 
 ## Setup
 
@@ -32,6 +32,4 @@ python scripts/run_yoco.py \
 
 By default the runner uses `abc/abc` and `abc/asap7_clean.lib`. It accepts `--abc`, `--lib`, `--device`, `--batch-size`, and `--select-threshold` overrides.
 
-The result directory contains only `mapped.v`, `mapped.blif`, and `metrics.json` (Area, Delay, ADP, CEC). The runner requires successful YOCO direct supplied-cut mapping, AIG hash validation, and CEC. Temporary predictions are deleted automatically. Each run requires an empty output directory.
-
-Only the trained model architecture, preprocessing, inference, ABC mapping and the example AIG are included. Check the redistribution rights for the technology library and all third-party ABC material before public release.
+The result directory contains only `mapped.v`, `mapped.blif`, and `metrics.json`. The runner requires successful YOCO direct supplied-cut mapping, AIG hash validation, and CEC. Each run requires an empty output directory.
